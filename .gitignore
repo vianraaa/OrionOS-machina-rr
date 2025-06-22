@@ -1,0 +1,6 @@
+# MachinaSystemImage clones these automatically
+linux
+limine
+
+# ignore all private pem keys inside SystemTrust folder
+SystemTrust/*.private.pem
