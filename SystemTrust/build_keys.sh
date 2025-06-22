@@ -7,6 +7,7 @@ set -e
 [ -f OTATrustKey.private.pem ] && echo "OTATrustKey already exists. aborting." && exit 1
 [ -f IntegrityTrustKey.private.pem ] && echo "IntegrityTrustKey already exists. aborting." && exit 1
 [ -f SignedDriverKey.private.pem ] && echo "SignedDriverKey already exists. aborting." && exit 1
+[ -f SecureBootKey.private.pem ] && echo "SecureBootKey already exists. aborting." && exit 1
 
 echo "generating trust keys..."
 
@@ -21,5 +22,8 @@ openssl pkey -in IntegrityTrustKey.private.pem -pubout -out IntegrityTrustKey.pu
 
 openssl genpkey -algorithm Ed25519 -out SignedDriverKey.private.pem
 openssl pkey -in SignedDriverKey.private.pem -pubout -out SignedDriverKey.public.pem
+
+openssl genpkey -algorithm Ed25519 -out SecureBootKey.private.pem
+openssl pkey -in SecureBootKey.private.pem -pubout -out SecureBootKey.public.pem
 
 echo "done."
