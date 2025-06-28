@@ -4,3 +4,4 @@ limine
 
 # ignore all private pem keys inside SystemTrust folder
 SystemTrust/*.private.pem
+MachinaSystemImage/MachinaSystemImage.img
